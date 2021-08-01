@@ -9,7 +9,7 @@
     "cypress": "cypress open",
     "test": "cypress run",
     "head-test": "npm run test -- --headed",
-    "chrome-test": "npm run test -- --bowser chrome",
+    "chrome-test": "npm run test -- --browser chrome",
     "record-dashboard-test": "npm run test -- -record --key 9f9b3c93-05df-4d02-b8da-90186751bc43",
     "test-report": "npm run test -- --reporter mochawesome"
   },
