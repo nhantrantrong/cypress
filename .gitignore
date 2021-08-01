@@ -1,3 +1,5 @@
 .DS_Store
 cypress-framework/cypress/videos/*
 cypress-framework/mochawesome-report/*
+node_modules/*
+cypress-framework/package-lock.json
