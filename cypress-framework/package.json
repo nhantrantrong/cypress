@@ -1,0 +1,24 @@
+{
+  "name": "cypress-framework",
+  "version": "1.0.0",
+  "description": "This is automation framework which is developed in Cypress JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf package-lock.json",
+    "reinstall": "npm run clean && npm install",
+    "cypress": "cypress open",
+    "test": "cypress run",
+    "head-test": "npm run test -- --headed",
+    "chrome-test": "npm run test -- --bowser chrome",
+    "record-dashboard-test": "npm run test -- -record --key 9f9b3c93-05df-4d02-b8da-90186751bc43",
+    "test-report": "npm run test -- --reporter mochawesome"
+  },
+  "author": "nhan.tran",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.1.0",
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^9.0.3",
+    "mochawesome": "^6.2.2"
+  }
+}
