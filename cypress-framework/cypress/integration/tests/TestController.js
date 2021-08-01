@@ -1,4 +1,5 @@
-import { Pages } from "../../support/Factories/PageFactory";
+import { Pages } from '../../support/factories/PageFactory';
+
 
 /**
  * 
