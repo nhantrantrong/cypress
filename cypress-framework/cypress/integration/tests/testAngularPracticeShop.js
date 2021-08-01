@@ -6,7 +6,7 @@ import { Pages } from "../../support/factories/PageFactory";
 import { Messages } from '../../support/contants/Messages';
 import { setupTest } from './TestController';
 
-describe('My first test suite', function () {
+describe('Angular Practice Shop Test Suite', function () {
 
     const homePage = Pages.HomePage
     const shopPage = Pages.ShopPage

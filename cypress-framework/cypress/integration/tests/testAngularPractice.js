@@ -4,7 +4,7 @@ import { FixtureData, loadData } from "../../support/factories/DataFactory";
 import { Pages } from "../../support/factories/PageFactory";
 import { setupTest } from "./TestController";
 
-describe('My first test suite', function () {
+describe('Angular Practice Test Suite', function () {
 
     const homePage = Pages.HomePage
     const shopPage = Pages.ShopPage
