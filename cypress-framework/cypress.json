@@ -1,8 +1,4 @@
 {
-  "defaultCommandTimeout": 10000,
-  "pageLoadTimeout": 30000,
-  "testFiles": "**/tests/*test*.js",
-  "reporter": "mochawesome",
   "env": {
     "qa": {
       "url": "https://rahulshettyacademy.com/angularpractice/"
@@ -12,8 +8,19 @@
     },
     "executedOn": "qa"
   },
+  "defaultCommandTimeout": 10000,
+  "pageLoadTimeout": 30000,
+  "testFiles": "**/tests/*test*.js",
   "retries": {
     "runMode": 1
+  },
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "cypress/report",
+    "charts": true,
+    "reportPageTitle": "Cypress Report",
+    "embeddedScreenshots": false,
+    "quiet": false
   },
   "projectId": "d1ufv1"
 }
