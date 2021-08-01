@@ -18,7 +18,6 @@
   "devDependencies": {
     "cypress": "^8.1.0",
     "cypress-iframe": "^1.0.1",
-    "mocha": "^9.0.3",
-    "mochawesome": "^6.2.2"
+    "cypress-mochawesome-reporter": "^2.2.1"
   }
 }
