@@ -1,4 +1,4 @@
-import WebPage from "../core/WebPage"
+import WebPage, { commonMethods } from "../core/WebPage"
 
 class ChooseDeliveryLocationPage extends WebPage {
 
@@ -8,19 +8,19 @@ class ChooseDeliveryLocationPage extends WebPage {
     successMessage = 'div.alert-success'
 
     typeCountryValue(strCountry) {
-        return this.commonMethods.typeElement(this.countryInput, strCountry)
+        return commonMethods.typeElement(this.countryInput, strCountry)
     }
 
     checkOnAgreeCheckbox() {
-        return this.commonMethods.checkElement(this.agreeCheckbox, true)
+        return commonMethods.checkElement(this.agreeCheckbox, true)
     }
 
     clickPurchaseButton() {
-        return this.commonMethods.clickElement(this.purchaseButton)
+        return commonMethods.clickElement(this.purchaseButton)
     }
 
     validateSuccessMessageShouldBeDisplayed(strMessage) {
-        return this.commonMethods.validateElementTextInclude(this.successMessage, strMessage)
+        return commonMethods.validateElementTextInclude(this.successMessage, strMessage)
     }
 
 }

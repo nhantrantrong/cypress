@@ -1,4 +1,4 @@
-import WebPage from "../core/WebPage"
+import WebPage, { commonMethods } from "../core/WebPage"
 
 class HomePage extends WebPage {
 
@@ -9,31 +9,31 @@ class HomePage extends WebPage {
     shopTab = 'li.nav-item .nav-link'
 
     typeValueIntoEditBox(value) {
-        return this.commonMethods.typeElement(this.editBox, value)
+        return commonMethods.typeElement(this.editBox, value)
     }
 
     typeTwoWayDataBinding(value) {
-        return this.commonMethods.typeElement(this.twoWayDataBinding, value)
+        return commonMethods.typeElement(this.twoWayDataBinding, value)
     }
 
     selectGender(value) {
-        return this.commonMethods.selectDropdownElement(this.genderDropdown, value)
+        return commonMethods.selectDropdownElement(this.genderDropdown, value)
     }
 
     clickShoptab() {
-        return this.commonMethods.clickElementContainsText(this.shopTab, 'Shop')
+        return commonMethods.clickElementContainsText(this.shopTab, 'Shop')
     }
 
     validateTwoWayDataBindingValue(expectedValue) {
-        return this.commonMethods.validateElementValue(this.twoWayDataBinding, expectedValue)
+        return commonMethods.validateElementValue(this.twoWayDataBinding, expectedValue)
     }
 
     validateEntrepreneuerRadioButtonDisabled() {
-        return this.commonMethods.validateElementDisabled(this.entrepreneuerRadioButton)
+        return commonMethods.validateElementDisabled(this.entrepreneuerRadioButton)
     }
 
     validateLengthOfTwoWayDataBindingValue(length) {
-        return this.commonMethods.validateElementAttribute(this.twoWayDataBinding, 'minlength', length)
+        return commonMethods.validateElementAttribute(this.twoWayDataBinding, 'minlength', length)
     }
 }
 

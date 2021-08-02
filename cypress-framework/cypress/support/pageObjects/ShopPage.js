@@ -1,4 +1,4 @@
-import WebPage from "../core/WebPage"
+import WebPage, { commonMethods } from "../core/WebPage"
 
 class ShopPage extends WebPage {
 
@@ -8,9 +8,9 @@ class ShopPage extends WebPage {
     productPriceText = '.card-body h5'
 
     addProduct(strProductName) {
-        this.commonMethods.findElement(this.productNameTitle).each(($el, index) => {
+        commonMethods.findElement(this.productNameTitle).each(($el, index) => {
             if ($el.text().trim() == strProductName) {
-                return this.commonMethods.clickElementByIndex(this.addButton, index)
+                return commonMethods.clickElementByIndex(this.addButton, index)
             }
         })
     }
@@ -22,25 +22,12 @@ class ShopPage extends WebPage {
     }
 
     clickCheckOutButton() {
-        return this.commonMethods.clickElement(this.checkOutButton)
+        return commonMethods.clickElement(this.checkOutButton)
     }
 
     validateCheckoutButtonContainsQuantity(intQuantity) {
         const strButtonText = `Checkout ( ${intQuantity} )`
-        return this.commonMethods.validateElementText(this.checkOutButton, strButtonText)
-    }
-
-    getPriceOfProduct(strProductName) {
-        this.commonMethods.findElement(this.productNameTitle).each(($el, index) => {
-            if ($el.text().trim() == strProductName) {
-                this.commonMethods.findElement(this.productPriceText)
-                    .eq(index)
-                    .invoke('text').then((priceText) => {
-                        Cypress.env('price', priceText.toString())
-                    })
-            }
-        })
-        return Cypress.env('price')
+        return commonMethods.validateElementText(this.checkOutButton, strButtonText)
     }
 }
 

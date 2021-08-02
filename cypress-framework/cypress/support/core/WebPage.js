@@ -2,8 +2,6 @@ import CommonMethods from "./CommonMethods";
 
 class WebPage {
 
-    commonMethods = new CommonMethods()
-
     wait(ms) {
         return cy.wait(ms)
     }
@@ -20,5 +18,7 @@ class WebPage {
         return cy.go('forward')
     }
 }
+
+export const commonMethods = new CommonMethods()
 
 export default WebPage
