@@ -15,9 +15,20 @@
   },
   "author": "nhan.tran",
   "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/integration/tests/BDD/step_definitions/**",
+    "commonPath": "cypress/integration/tests/BDD/step_definitions/common/**",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
   "devDependencies": {
     "cypress": "^8.1.0",
+    "cypress-cucumber-preprocessor": "^4.2.0",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^2.2.1"
+    "multiple-cucumber-html-reporter": "^1.18.0"
   }
 }

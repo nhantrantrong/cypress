@@ -4,3 +4,4 @@ cypress-framework/mochawesome-report/*
 cypress-framework/node_modules/*
 cypress-framework/package-lock.json
 cypress-framework/cypress/report/*
+cypress-framework/cypress/screenshots/*

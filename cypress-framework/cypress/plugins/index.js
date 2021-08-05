@@ -11,7 +11,8 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
-const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
+const cucumber = require('cypress-cucumber-preprocessor').default
+
 
 /**
  * @type {Cypress.PluginConfig}
@@ -19,15 +20,8 @@ const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/li
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
-  on('before:run', async (details) => {
-    console.log('override before:run');
-    await beforeRunHook(details);
-  });
 
-  on('after:run', async () => {
-    console.log('override after:run');
-    await afterRunHook();
-  });
-  
+  on('file:preprocessor', cucumber());
+
   // `config` is the resolved Cypress config
 }

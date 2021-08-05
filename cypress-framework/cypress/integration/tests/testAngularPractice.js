@@ -31,14 +31,14 @@ describe('Angular Practice Test Suite', function () {
         homePage.validateEntrepreneuerRadioButtonDisabled()
     })
 
-    it('Test Shop Page Interact', function () {
+    it.only('Test Shop Page Interact', function () {
         homePage.clickShoptab()
         // cy.get('li.nav-item').each(($navigator) => {
         //     cy.log($navigator.text())
         //     const textVal = $navigator.text()
         //     if (textVal.includes('Shop')) {
         //         cy.log(textVal.includes('Shop'))
-        //         $navigator.find('.nav-link').click()
+        //         cy.wrap($navigator).find('.nav-link').click()
         //     }
         // })
 

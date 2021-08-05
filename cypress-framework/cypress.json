@@ -10,17 +10,9 @@
   },
   "defaultCommandTimeout": 10000,
   "pageLoadTimeout": 30000,
-  "testFiles": "**/tests/*test*.js",
+  "testFiles": "**/tests/BDD/features/**/*.feature",
   "retries": {
     "runMode": 1
-  },
-  "reporter": "cypress-mochawesome-reporter",
-  "reporterOptions": {
-    "reportDir": "cypress/report",
-    "charts": true,
-    "reportPageTitle": "Cypress Report",
-    "embeddedScreenshots": false,
-    "quiet": false
   },
   "projectId": "d1ufv1"
 }
