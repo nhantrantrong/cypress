@@ -1,0 +1,51 @@
+version: 2.1
+
+executors:
+  cypress-node12:
+    docker:
+      # the Docker image with Cypress dependencies
+      - image: cypress/base:12.19.0
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: /root/project
+
+jobs:
+  setup:
+    executor: cypress-node12
+    steps:
+      - checkout
+      - run:
+          name: Reinstall Cypress and Dependencies
+          command: npm --prefix ./cypress-framework run reinstall
+      - persist_to_workspace:
+          root: cypress-framework
+          paths:
+            - ./*
+      - save_cache:
+          key: v2-deps-{{ .Branch }}-{{ checksum "./cypress-framework/package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+  run_tests:
+    executor: cypress-node12
+    # parallelism: 1
+    steps:
+      - attach_workspace:
+          at: /root/project/cypress-framework
+      - restore_cache:
+          keys: 
+            - v2-deps-{{ .Branch }}-{{ checksum "./cypress-framework/package.json" }}
+      - run:
+          name: Running Sample tests
+          command: npm --prefix ./cypress-framework run head-test -- --reporter cypress-mochawesome-reporter
+      - store_artifacts:
+          path: ./cypress-framework/cypress/report
+
+workflows:
+  setup_and_test:
+    jobs:
+      - setup
+      - run_tests:
+          requires:
+            - setup
