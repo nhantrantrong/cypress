@@ -1,12 +1,28 @@
 version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
-workflows:
+
+jobs:
   build:
-    jobs:
-      - cypress/install:
-          build: "npm run reinstall" # run a custom app build step
-      - cypress/run:
-          requires:
-            - cypress/install
-          start: "npm run head-test" # start server before running tests
+    docker:
+      # the Docker image with Cypress dependencies
+      - image: cypress/base:12.19.0
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    # working_directory: ~/app
+    # parallelism: 1
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v2-deps-{{ .Branch }}-
+            - v2-deps-
+      - run: npm run reinstall
+      - save_cache:
+          key: v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run:
+          name: Running Sample tests
+          command: npm run head-test
