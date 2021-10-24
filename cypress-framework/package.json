@@ -7,6 +7,7 @@
     "clean": "rm -rf node_modules && rm -rf package-lock.json",
     "reinstall": "npm run clean && npm install",
     "cypress": "cypress open",
+    "cypress:debugger": "cross-env CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open",
     "test": "cypress run",
     "head-test": "npm run test -- --headed",
     "chrome-test": "npm run test -- --browser chrome",
@@ -26,6 +27,7 @@
     }
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "cypress": "^8.1.0",
     "cypress-cucumber-preprocessor": "^4.2.0",
     "cypress-iframe": "^1.0.1",

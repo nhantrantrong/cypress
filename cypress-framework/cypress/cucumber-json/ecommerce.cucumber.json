@@ -23,7 +23,7 @@
             "name": "Angluar Practice page has been launched",
             "result": {
               "status": "passed",
-              "duration": 3595000000
+              "duration": 1713000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "I open ecommerce page",
             "result": {
               "status": "passed",
-              "duration": 3708000000
+              "duration": 2024000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "I add items to Cart",
             "result": {
               "status": "passed",
-              "duration": 2144000000
+              "duration": 962000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "Select the country submit",
             "result": {
               "status": "passed",
-              "duration": 1425000000
+              "duration": 1069000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "Validate thankyou message",
             "result": {
               "status": "passed",
-              "duration": 181000000
+              "duration": 100000000
             }
           }
         ]
